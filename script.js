@@ -19,6 +19,11 @@ const CONFIG = {
   // true = muestra la entrada con el sobre; false = abre directo la invitación
   ENTRADA_SOBRE: true,
 
+  // Música de fondo. Empieza al abrir el sobre (los navegadores no dejan que suene sola).
+  // inicio = segundo desde el que arranca; volumen de 0 a 1 (el iPhone ignora el volumen).
+  // Para quitarla: MUSICA: null
+  MUSICA: { archivo: 'corazon-de-nino.mp3', inicio: 0, volumen: 0.55 },
+
   WHATSAPP: '50242894557',
   MAPS: 'https://maps.app.goo.gl/nNvKW8VQEfgJ6L958',
 
@@ -49,15 +54,94 @@ const CONFIG = {
   const plural = (n, uno, varios) => `${n} ${n === 1 ? uno : varios}`;
 
   /* ---------------------------------------------------------
+     0. Música de fondo
+     --------------------------------------------------------- */
+  function initMusic() {
+    const audio = $('#bgMusic');
+    const btn = $('#musicBtn');
+    const cfg = CONFIG.MUSICA;
+    const none = { start() {}, startOnFirstTap() {} };
+
+    if (!audio || !btn || !cfg || !cfg.archivo) {
+      if (audio) audio.remove();
+      if (btn) btn.remove();
+      return none;
+    }
+
+    // "#t=15" hace que la canción arranque en ese segundo
+    audio.src = cfg.archivo + (cfg.inicio ? `#t=${cfg.inicio}` : '');
+    const target = Math.min(Math.max(Number(cfg.volumen) || 0.55, 0), 1);
+    let userPaused = false;   // la persona la pausó con el botón
+    let pausedByHide = false; // se pausó porque cambió de app o pestaña
+    let fadeTimer;
+
+    const setUI = (playing) => {
+      btn.classList.toggle('is-playing', playing);
+      btn.setAttribute('aria-pressed', String(playing));
+      btn.setAttribute('aria-label', playing ? 'Pausar la música' : 'Reproducir la música');
+    };
+    audio.addEventListener('play', () => setUI(true));
+    audio.addEventListener('pause', () => setUI(false));
+
+    const fadeIn = () => {
+      clearInterval(fadeTimer);
+      try { audio.volume = 0; } catch (e) { return; }
+      fadeTimer = setInterval(() => {
+        const v = Math.min(audio.volume + target / 20, target);
+        audio.volume = v;
+        if (v >= target) clearInterval(fadeTimer);
+      }, 100);
+    };
+
+    const play = () => {
+      fadeIn();
+      const p = audio.play();
+      if (p && p.catch) p.catch(() => setUI(false)); // el navegador la bloqueó: queda el botón
+    };
+
+    btn.addEventListener('click', () => {
+      if (audio.paused) { userPaused = false; play(); }
+      else { userPaused = true; audio.pause(); }
+    });
+
+    // Pausar al salir a otra app o pestaña (abrir Maps, WhatsApp…) y reanudar al volver
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden && !audio.paused) { pausedByHide = true; audio.pause(); }
+      else if (!document.hidden && pausedByHide && !userPaused) { pausedByHide = false; play(); }
+    });
+
+    return {
+      // Se llama dentro del toque al sobre (así el navegador la deja sonar)
+      start() {
+        btn.hidden = false;
+        if (!userPaused) play();
+      },
+      // Sin sobre: arranca con el primer toque en la página
+      startOnFirstTap() {
+        btn.hidden = false;
+        const once = (e) => {
+          document.removeEventListener('click', once, true);
+          document.removeEventListener('keydown', once, true);
+          if (btn.contains(e.target)) return; // el botón ya se encarga
+          if (!userPaused && audio.paused) play();
+        };
+        document.addEventListener('click', once, true);
+        document.addEventListener('keydown', once, true);
+      },
+    };
+  }
+
+  /* ---------------------------------------------------------
      1. Entrada con sobre
      --------------------------------------------------------- */
-  function initIntro() {
+  function initIntro(music) {
     const intro = $('#intro');
     const html = document.documentElement;
     const done = () => {
       html.classList.remove('intro-active');
       if (intro) intro.remove();
       startReveals();
+      music.startOnFirstTap();
     };
 
     if (!intro || !CONFIG.ENTRADA_SOBRE) { done(); return; }
@@ -68,6 +152,7 @@ const CONFIG = {
     const open = () => {
       if (opened) return;
       opened = true;
+      music.start(); // debe ir aquí, dentro del toque, o el navegador bloquea el sonido
       intro.classList.add('is-open');
       const t1 = reduceMotion ? 250 : 1650;
       const t2 = reduceMotion ? 300 : 800;
@@ -555,5 +640,5 @@ const CONFIG = {
   initCalendar();
   initCountdown();
   initRSVP();
-  initIntro();
+  initIntro(initMusic());
 })();

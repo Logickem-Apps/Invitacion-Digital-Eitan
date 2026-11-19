@@ -13,13 +13,13 @@
   <meta property="og:locale" content="es_GT">
   <meta property="og:title" content="Graduación · Eitan Josias López Corazón">
   <meta property="og:description" content="Sábado 5 de diciembre · 6:00 p. m. · Café Moka, Rabinal. Confirme su asistencia aquí.">
-  <!-- og-eitan.jpg: recorte cuadrado y liviano (600x600, ~85 KB) para que WhatsApp lo muestre -->
-  <meta property="og:image" content="https://invitacion-eitan.netlify.app/og-eitan.jpg">
-  <meta property="og:image:secure_url" content="https://invitacion-eitan.netlify.app/og-eitan.jpg">
+  <!-- og-eitan-2.jpg: recorte cuadrado y liviano (600x600, ~95 KB) para que WhatsApp lo muestre -->
+  <meta property="og:image" content="https://invitacion-eitan.netlify.app/og-eitan-2.jpg">
+  <meta property="og:image:secure_url" content="https://invitacion-eitan.netlify.app/og-eitan-2.jpg">
   <meta property="og:image:type" content="image/jpeg">
   <meta property="og:image:width" content="600">
   <meta property="og:image:height" content="600">
-  <meta property="og:image:alt" content="Eitan Josias López Corazón con su uniforme de gala">
+  <meta property="og:image:alt" content="Eitan Josias López Corazón con uniforme, sentado frente a un monumento">
   <meta property="og:url" content="https://invitacion-eitan.netlify.app/">
   <meta name="twitter:card" content="summary">
 
@@ -72,8 +72,8 @@
       <figure class="portrait__frame reveal">
         <span class="portrait__apex" aria-hidden="true"></span>
         <div class="portrait__arch">
-          <img src="Foto_Eitan.jpg" width="960" height="1280"
-               alt="Eitan Josias López Corazón con su uniforme de gala"
+          <img src="Foto_Eitan2.jpg" width="960" height="1280"
+               alt="Eitan Josias López Corazón con uniforme, sentado frente a un monumento"
                fetchpriority="high" decoding="async">
         </div>
         <span class="portrait__seal seal seal--line" aria-hidden="true">
@@ -92,7 +92,7 @@
 
       <!-- ===================== PORTADA ===================== -->
       <header class="hero section">
-        <p class="eyebrow reveal">Tengo el honor de invitarle a mi</p>
+        <p class="eyebrow reveal">Tengo el honor de invitarlos a mi</p>
         <h1 class="hero__title reveal" id="inicio" tabindex="-1">Graduación</h1>
 
         <svg class="divider reveal" viewBox="0 0 200 20" aria-hidden="true">
@@ -102,7 +102,7 @@
           <line x1="116" y1="10" x2="200" y2="10"/>
         </svg>
 
-        <p class="hero__name reveal">Eitan Josias<br>López Corazón</p>
+        <p class="hero__name reveal">Perito Agrónomo<br>y Subteniente en Reservas</p>
 
         <div class="date reveal" aria-label="Sábado 5 de diciembre de 2026, 6:00 de la tarde">
           <div class="date__row" aria-hidden="true">
@@ -120,11 +120,16 @@
       <section class="section message" aria-label="Mensaje">
         <p class="message__lead reveal">Hay logros que se celebran mejor acompañados.</p>
         <p class="message__text reveal">
-          Cada paso de este camino lo di gracias a Dios, al esfuerzo y a quienes
-          estuvieron a mi lado. Hoy cierro una etapa muy importante de mi vida
-          y sería un honor celebrarla en su compañía.
+          Cada paso de este camino lo di gracias a Dios, al esfuerzo de mis padres,
+          con la bendición de mis abuelos ✟
+          y a quienes estuvieron a mi lado.
+          Hoy cierro una etapa muy importante de mi vida
+          y sería un honor celebrarla con su compañía.
         </p>
-        <p class="message__sign reveal">Eitan</p>
+        <p class="message__sign reveal">JL Misael y Marleni <span class="message__heart" aria-hidden="true">❤️</span></p>
+          <p class="message__text reveal">
+          Orgullosos de los logros del subteniente en reservas.
+        </p>
       </section>
 
       <!-- ===================== DETALLES ===================== -->
@@ -297,7 +302,7 @@
             <text x="60" y="71" class="seal__mono" text-anchor="middle">EL</text>
           </svg>
         </span>
-        <p class="footer__text">Le espero con mucho cariño.</p>
+        <p class="footer__text">Los espero con mucho cariño.</p>
         <p class="footer__sign">Eitan</p>
         <p class="footer__date">05 · XII · MMXXVI</p>
       </footer>
@@ -321,6 +326,14 @@
       </button>
     </li>
   </template>
+
+  <!-- ===================== MÚSICA DE FONDO =====================
+       El archivo y el segundo de inicio se cambian en script.js (CONFIG.MUSICA). -->
+  <audio id="bgMusic" preload="none" loop></audio>
+  <button type="button" class="music" id="musicBtn" aria-pressed="false" aria-label="Reproducir la música" hidden>
+    <span class="music__on" aria-hidden="true"><i></i><i></i><i></i></span>
+    <svg class="music__off" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18V5.5l10-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/><path d="M3.5 3.5l17 17"/></svg>
+  </button>
 
   <script src="script.js" defer></script>
 </body>
