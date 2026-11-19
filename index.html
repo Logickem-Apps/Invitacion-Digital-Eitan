@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Graduación · Eitan Josias López Corazón</title>
+  <meta name="description" content="Tengo el honor de invitarle a mi graduación. Sábado 5 de diciembre de 2026, 6:00 p. m., Café Moka, Rabinal, Baja Verapaz.">
+  <meta name="theme-color" content="#081B1D">
+
+  <!-- Vista previa al compartir por WhatsApp / Facebook.
+       Cuando la página esté publicada, cambie TU-DOMINIO por la dirección real
+       (por ejemplo https://graduacion-eitan.netlify.app). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Graduación · Eitan Josias López Corazón">
+  <meta property="og:description" content="Sábado 5 de diciembre · 6:00 p. m. · Café Moka, Rabinal. Confirme su asistencia aquí.">
+  <meta property="og:image" content="https://TU-DOMINIO/Foto_Eitan.jpg">
+  <meta property="og:url" content="https://TU-DOMINIO/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23081B1D'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia,serif' font-style='italic' font-size='34' fill='%23E1C381'%3EE%3C/text%3E%3C/svg%3E">
+  <link rel="preload" href="fonts/bodoni-moda-latin-opsz-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    // Marca que hay JavaScript (activa animaciones y la entrada con sobre).
+    document.documentElement.classList.add('js', 'intro-active');
+  </script>
+</head>
+<body>
+
+  <!-- ===================== ENTRADA CON SOBRE =====================
+       Para quitarla: en script.js ponga ENTRADA_SOBRE: false
+       (o borre este bloque completo). -->
+  <div class="intro" id="intro">
+    <div class="intro__inner">
+      <p class="intro__eyebrow">Una invitación especial</p>
+      <p class="intro__name">Eitan Josias López Corazón</p>
+
+      <button type="button" class="envelope" id="envelopeBtn" aria-label="Abrir la invitación">
+        <span class="envelope__back" aria-hidden="true"></span>
+        <span class="envelope__card" aria-hidden="true">
+          <span class="envelope__card-title">Graduación</span>
+          <span class="envelope__card-sub">Eitan · 2026</span>
+        </span>
+        <span class="envelope__front" aria-hidden="true"></span>
+        <span class="envelope__flap" aria-hidden="true"></span>
+        <span class="envelope__seal seal seal--wax" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sealRingA" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+            <circle cx="60" cy="60" r="55" class="seal__rim"/>
+            <circle cx="60" cy="60" r="36" class="seal__inner"/>
+            <text class="seal__ring"><textPath href="#sealRingA" textLength="280" lengthAdjust="spacing">GRADUACIÓN • MMXXVI • GRADUACIÓN • MMXXVI •</textPath></text>
+            <text x="60" y="71" class="seal__mono" text-anchor="middle">EL</text>
+          </svg>
+        </span>
+      </button>
+
+      <p class="intro__hint">Toque el sello para abrir</p>
+    </div>
+  </div>
+
+  <main class="page" id="contenido">
+
+    <!-- ===================== FOTO ===================== -->
+    <aside class="portrait" aria-label="Fotografía del graduando">
+      <figure class="portrait__frame reveal">
+        <span class="portrait__apex" aria-hidden="true"></span>
+        <div class="portrait__arch">
+          <img src="Foto_Eitan.jpg" width="960" height="1280"
+               alt="Eitan Josias López Corazón con su uniforme de gala"
+               fetchpriority="high" decoding="async">
+        </div>
+        <span class="portrait__seal seal seal--line" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sealRingB" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+            <circle cx="60" cy="60" r="55" class="seal__rim"/>
+            <circle cx="60" cy="60" r="36" class="seal__inner"/>
+            <text class="seal__ring"><textPath href="#sealRingB" textLength="280" lengthAdjust="spacing">GRADUACIÓN • MMXXVI • GRADUACIÓN • MMXXVI •</textPath></text>
+            <text x="60" y="71" class="seal__mono" text-anchor="middle">EL</text>
+          </svg>
+        </span>
+      </figure>
+    </aside>
+
+    <div class="content">
+
+      <!-- ===================== PORTADA ===================== -->
+      <header class="hero section">
+        <p class="eyebrow reveal">Tengo el honor de invitarle a mi</p>
+        <h1 class="hero__title reveal" id="inicio" tabindex="-1">Graduación</h1>
+
+        <svg class="divider reveal" viewBox="0 0 200 20" aria-hidden="true">
+          <line x1="0" y1="10" x2="84" y2="10"/>
+          <line x1="92" y1="4" x2="108" y2="16"/>
+          <line x1="108" y1="4" x2="92" y2="16"/>
+          <line x1="116" y1="10" x2="200" y2="10"/>
+        </svg>
+
+        <p class="hero__name reveal">Eitan Josias<br>López Corazón</p>
+
+        <div class="date reveal" aria-label="Sábado 5 de diciembre de 2026, 6:00 de la tarde">
+          <div class="date__row" aria-hidden="true">
+            <span class="date__side">Sábado</span>
+            <span class="date__day">05</span>
+            <span class="date__side">Diciembre</span>
+          </div>
+          <p class="date__year" aria-hidden="true">2026 &nbsp;·&nbsp; 6:00 p. m.</p>
+        </div>
+
+        <a href="#confirmar" class="btn btn--primary reveal">Confirmar asistencia</a>
+      </header>
+
+      <!-- ===================== MENSAJE ===================== -->
+      <section class="section message" aria-label="Mensaje">
+        <p class="message__lead reveal">Hay logros que se celebran mejor acompañados.</p>
+        <p class="message__text reveal">
+          Cada paso de este camino lo di gracias a Dios, al esfuerzo y a quienes
+          estuvieron a mi lado. Hoy cierro una etapa muy importante de mi vida
+          y sería un honor celebrarla en su compañía.
+        </p>
+        <p class="message__sign reveal">Eitan</p>
+      </section>
+
+      <!-- ===================== DETALLES ===================== -->
+      <section class="section details" aria-labelledby="detalles-titulo">
+        <p class="eyebrow reveal">Cuándo y dónde</p>
+        <h2 class="section__title reveal" id="detalles-titulo">Detalles</h2>
+
+        <div class="panel details__panel reveal">
+          <ul class="details__list">
+            <li class="detail">
+              <span class="detail__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4"/></svg>
+              </span>
+              <div>
+                <span class="detail__label">Fecha</span>
+                <span class="detail__value">Sábado 5 de diciembre de 2026</span>
+              </div>
+            </li>
+            <li class="detail">
+              <span class="detail__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+              </span>
+              <div>
+                <span class="detail__label">Hora</span>
+                <span class="detail__value">6:00 p. m.</span>
+              </div>
+            </li>
+            <li class="detail">
+              <span class="detail__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              </span>
+              <div>
+                <span class="detail__label">Lugar</span>
+                <span class="detail__value">Café Moka</span>
+                <span class="detail__sub">Aldea Palimonix, Rabinal, Baja Verapaz</span>
+              </div>
+            </li>
+          </ul>
+
+          <div class="details__actions">
+            <a class="btn btn--primary" id="mapsLink" href="https://maps.app.goo.gl/nNvKW8VQEfgJ6L958" target="_blank" rel="noopener">
+              <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.4"/></svg>
+              Cómo llegar
+            </a>
+            <details class="cal" id="calMenu">
+              <summary class="btn btn--ghost">
+                <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5"/></svg>
+                Agregar al calendario
+              </summary>
+              <div class="cal__menu">
+                <a class="cal__item" id="gcalLink" href="#" target="_blank" rel="noopener">Google Calendar</a>
+                <button type="button" class="cal__item" id="icsBtn">iPhone / Outlook (.ics)</button>
+              </div>
+            </details>
+          </div>
+        </div>
+
+        <div class="countdown reveal" id="countdown">
+          <p class="eyebrow countdown__title" id="countdownTitle">Faltan</p>
+          <div class="countdown__grid" aria-live="off">
+            <div class="countdown__cell"><span class="countdown__num" data-cd="d">00</span><span class="countdown__lbl">Días</span></div>
+            <div class="countdown__cell"><span class="countdown__num" data-cd="h">00</span><span class="countdown__lbl">Horas</span></div>
+            <div class="countdown__cell"><span class="countdown__num" data-cd="m">00</span><span class="countdown__lbl">Minutos</span></div>
+            <div class="countdown__cell"><span class="countdown__num" data-cd="s">00</span><span class="countdown__lbl">Segundos</span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== CONFIRMACIÓN ===================== -->
+      <section class="section rsvp" id="confirmar" aria-labelledby="rsvp-titulo">
+        <p class="eyebrow reveal">R. S. V. P.</p>
+        <h2 class="section__title reveal" id="rsvp-titulo">Confirme su asistencia</h2>
+        <p class="section__intro reveal">Le agradeceré confirmar a más tardar el <strong>sábado 28 de noviembre</strong>.</p>
+
+        <div class="panel rsvp__panel reveal">
+
+          <form id="rsvpForm" novalidate>
+            <fieldset class="field field--choice">
+              <legend class="field__label">¿Nos acompañará?</legend>
+              <div class="choices">
+                <label class="choice">
+                  <input type="radio" name="asiste" value="Sí" class="sr-only">
+                  <span class="choice__box">
+                    <span class="choice__mark" aria-hidden="true"></span>
+                    <span class="choice__text">Sí, asistiré</span>
+                    <span class="choice__hint">Con gusto estaré ahí</span>
+                  </span>
+                </label>
+                <label class="choice">
+                  <input type="radio" name="asiste" value="No" class="sr-only">
+                  <span class="choice__box">
+                    <span class="choice__mark" aria-hidden="true"></span>
+                    <span class="choice__text">No podré asistir</span>
+                    <span class="choice__hint">Le acompaño a distancia</span>
+                  </span>
+                </label>
+              </div>
+              <p class="field__error" id="asisteError" hidden></p>
+            </fieldset>
+
+            <!-- Si asistirá -->
+            <div class="form-block" id="yesBlock" hidden>
+              <div class="field">
+                <p class="field__label" id="personasLabel">Personas que asistirán</p>
+                <p class="field__hint">Escriba primero su nombre y luego el de cada acompañante. Indique si es adulto o niño.</p>
+                <ol class="people" id="peopleList" aria-labelledby="personasLabel"></ol>
+                <button type="button" class="btn-add" id="addPerson">
+                  <span aria-hidden="true">+</span> Agregar acompañante
+                </button>
+              </div>
+
+              <div class="tally" id="tally" aria-live="polite"></div>
+
+              <div class="field">
+                <label class="field__label" for="telefono">Teléfono del representante <span class="field__opt">(opcional)</span></label>
+                <p class="field__hint" id="telefonoHint">Un solo número de contacto para todo el grupo o familia.</p>
+                <input class="input" type="tel" id="telefono" name="telefono" inputmode="tel" autocomplete="tel" placeholder="WhatsApp, ej. 5555 1234" aria-describedby="telefonoHint telefonoError">
+                <p class="field__error" id="telefonoError" hidden></p>
+              </div>
+            </div>
+
+            <!-- Si no asistirá -->
+            <div class="form-block" id="noBlock" hidden>
+              <div class="field">
+                <label class="field__label" for="nombreNo">Su nombre</label>
+                <input class="input" type="text" id="nombreNo" name="nombreNo" autocomplete="name" placeholder="Nombre completo" aria-describedby="nombreNoError">
+                <p class="field__error" id="nombreNoError" hidden></p>
+              </div>
+            </div>
+
+            <div class="form-block" id="commonBlock" hidden>
+              <div class="field">
+                <label class="field__label" for="mensaje">Mensaje para Eitan <span class="field__opt">(opcional)</span></label>
+                <textarea class="input input--area" id="mensaje" name="mensaje" rows="3" maxlength="500" placeholder="Unas palabras de cariño…"></textarea>
+              </div>
+
+              <!-- Campo trampa contra robots: debe quedar vacío -->
+              <div class="hp" aria-hidden="true">
+                <label for="web">No llenar</label>
+                <input type="text" id="web" name="web" tabindex="-1" autocomplete="off">
+              </div>
+
+              <button type="submit" class="btn btn--primary btn--block" id="submitBtn">
+                <span class="btn__label">Enviar confirmación</span>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+              <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+            </div>
+          </form>
+
+          <div class="done" id="rsvpDone" hidden tabindex="-1"></div>
+          <div class="closed" id="rsvpClosed" hidden></div>
+        </div>
+
+        <p class="rsvp__help reveal">
+          ¿Tiene alguna duda?
+          <a id="waLink" href="https://wa.me/50242894557?text=Hola%20Eitan%2C%20tengo%20una%20consulta%20sobre%20tu%20graduaci%C3%B3n." target="_blank" rel="noopener">Escríbame por WhatsApp · 4289 4557</a>
+        </p>
+        <noscript><p class="rsvp__help">Para confirmar desde esta página active JavaScript, o escriba por WhatsApp al 4289 4557.</p></noscript>
+      </section>
+
+      <!-- ===================== CIERRE ===================== -->
+      <footer class="footer">
+        <span class="footer__seal seal seal--line" aria-hidden="true">
+          <svg viewBox="0 0 120 120">
+            <defs><path id="sealRingC" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+            <circle cx="60" cy="60" r="55" class="seal__rim"/>
+            <circle cx="60" cy="60" r="36" class="seal__inner"/>
+            <text class="seal__ring"><textPath href="#sealRingC" textLength="280" lengthAdjust="spacing">GRADUACIÓN • MMXXVI • GRADUACIÓN • MMXXVI •</textPath></text>
+            <text x="60" y="71" class="seal__mono" text-anchor="middle">EL</text>
+          </svg>
+        </span>
+        <p class="footer__text">Le espero con mucho cariño.</p>
+        <p class="footer__sign">Eitan</p>
+        <p class="footer__date">05 · XII · MMXXVI</p>
+      </footer>
+    </div>
+  </main>
+
+  <template id="personTpl">
+    <li class="person">
+      <span class="person__num" aria-hidden="true">01</span>
+      <div class="person__name">
+        <label class="sr-only person__label">Nombre de la persona</label>
+        <input class="input" type="text" autocomplete="off" maxlength="80" placeholder="Nombre completo">
+        <p class="field__error" hidden></p>
+      </div>
+      <div class="seg" role="radiogroup">
+        <label><input type="radio" value="Adulto" class="sr-only" checked><span>Adulto</span></label>
+        <label><input type="radio" value="Niño" class="sr-only"><span>Niño</span></label>
+      </div>
+      <button type="button" class="person__remove">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </li>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>

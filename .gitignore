@@ -1,0 +1,9 @@
+# Archivos internos que no se publican
+LEEME.md
+google-apps-script/
+
+# Sistema y editor
+.vscode/
+Thumbs.db
+desktop.ini
+.DS_Store
